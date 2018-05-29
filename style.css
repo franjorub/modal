@@ -1,0 +1,102 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    border: 1px solid black;
+    border-radius: 2px;
+    font-size: 1.2rem;
+    background: white;
+    color: black;
+    transition: .5s;
+    cursor: pointer;
+}
+
+button:hover {
+    background: black;
+    color: white;
+}
+
+.overlay {
+    position: fixed;
+    background: rgba(0, 0, 0, .5);
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    visibility: hidden;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    transition: .5s;
+}
+
+.modal {
+    width: 200px;
+    background: white;
+    border-radius: 5px;
+    /*animation: modalIn .5s forwards;*/
+    animation-delay: .5s;
+    animation-timing-function: cubic-bezier(.43, -0.55, .71, 1.3);
+    animation-iteration-count: 1;
+    transform: translateY(-700px);
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-button {
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: grey;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    margin: 1px 2px;
+    will-change: transform;
+    transition: .2s;
+}
+
+.modal-button:active {
+    transform: scale(.3);
+}
+
+.modal-button:hover {
+    background: white;
+    color: black;
+}
+
+.modal-content {
+    text-align: center;
+    font-family: Arial;
+}
+
+.overlay.active {
+    visibility: visible;
+}
+
+@keyframes modalIn {
+    from {
+        transform: translateY(-700px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes modalOut {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-700px);
+    }
+}
